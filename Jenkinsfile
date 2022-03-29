@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Building image') {
             steps{
                 script {
@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        
+
         // Building Docker images
         stage('Pushing Image') {
             steps{
@@ -30,11 +30,11 @@ pipeline {
         }
         
         stage('Creating CF Stack') {
-            steps{
-         
+          steps{
+            withAWS(credentials: 'aws1') {
                     sh "aws cloudformation create-stack --stack-name ECS --template-body file://ecs.yml --capabilities CAPABILITIES_NAMED_IAM --region us-east-1"
-                
             }
-        }       
+          }
+        }
     }
 }
