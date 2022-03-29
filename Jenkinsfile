@@ -32,7 +32,7 @@ pipeline {
         stage('Creating CF Stack') {
           steps{
             withAWS(credentials: 'aws1') {
-                    sh "aws cloudformation create-stack --stack-name ECS --template-body file://ecs.yml --capabilities CAPABILITIES_NAMED_IAM --region us-east-1"
+                    sh "aws cloudformation create-stack --stack-name ECS --template-body file://ecs.yml --capabilities CAPABILITIES_AUTO_EXPAND --region us-east-1"
             }
           }
         }
