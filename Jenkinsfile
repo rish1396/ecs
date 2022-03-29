@@ -13,11 +13,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                script {
-                    sh "git clone https://github.com/rish1396/ecs.git"
-                    sh "cd ecs"
-                }
-            
+                    git 'https://github.com/jglick/simple-maven-project-with-tests.git'
             }
         }
         
