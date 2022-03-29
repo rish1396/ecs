@@ -13,7 +13,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                    git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                    git 'https://github.com/rish1396/ecs.git'
             }
         }
         
