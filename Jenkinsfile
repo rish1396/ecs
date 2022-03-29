@@ -19,5 +19,14 @@ pipeline {
                 }
             }
         }
+        
+        // Building Docker images
+        stage('Pushing Image') {
+            steps{
+                script {
+                    sh "docker push 177558318616.dkr.ecr.us-east-1.amazonaws.com/test:latest"
+        }
+      }
+    }
     }
 }
