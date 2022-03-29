@@ -11,12 +11,6 @@ pipeline {
             }
         }
         
-        stage('Cloning Git') {
-            steps {
-                    git 'https://github.com/rish1396/ecs.git'
-            }
-        }
-        
         stage('Building image') {
             steps{
                 script {
